@@ -7,6 +7,7 @@ socket.on("message-rcv",function(obj){
         chatItem.innerHTML=`${obj.name} :${obj.message}`;
         chatBox.appendChild(chatItem);
         messageInput.value="";
+        chatBox.scrollTop=chatBox.scrollHeight;
     
 })
 
@@ -16,6 +17,7 @@ socket.on("new-user",function(name){
         chatItem.classList.add("join");
         chatItem.innerHTML=`${name} joined chat`;
         chatBox.appendChild(chatItem);
+        chatBox.scrollTop=chatBox.scrollHeight;
 })
 
 //joined chat
@@ -24,4 +26,5 @@ socket.on("left-chat",function(name){
         chatItem.classList.add("leave");
         chatItem.innerHTML=`${name} left chat`;
         chatBox.appendChild(chatItem);
+        chatBox.scrollTop=chatBox.scrollHeight;
 })

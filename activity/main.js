@@ -17,6 +17,7 @@ send.addEventListener("click",function(){
         chatItem.innerHTML=msg;
         chatBox.appendChild(chatItem);
         messageInput.value="";
+        chatBox.scrollTop=chatBox.scrollHeight;//jab bhi nya msg ya kuch bhi ho to uske acc scroll bar ki height fix ho jaye
         socket.emit("message-send",msg);//ye phle socket ke pass jayega
         
     }
