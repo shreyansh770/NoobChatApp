@@ -38,6 +38,12 @@ io.on('connection', function(socket) {
         socket.broadcast.emit("new-user",name)
     })
 
+    socket.on("online-user",function(name){
+            
+      socket.broadcast.emit("abcd",name)
+
+    })
+
     //disconnect user
     socket.on('disconnect', function(reason){
       let id= socket.id;

@@ -20,11 +20,20 @@ socket.on("new-user",function(name){
         chatBox.scrollTop=chatBox.scrollHeight;
 })
 
-//joined chat
+//leave chat
 socket.on("left-chat",function(name){
         let chatItem=document.createElement("div");
         chatItem.classList.add("leave");
         chatItem.innerHTML=`${name} left chat`;
         chatBox.appendChild(chatItem);
         chatBox.scrollTop=chatBox.scrollHeight;
+})
+
+//onl9 user
+socket.on("abcd",function(name){
+        let ulItem= document.querySelector(".body-online ul")
+        let ilItem = document.createElement("li");
+        ilItem.classList.add("list");
+        ilItem.innerHTML=`${name} Online`;
+        ulItem.appendChild(ilItem);
 })

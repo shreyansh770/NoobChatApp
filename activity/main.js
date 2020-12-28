@@ -1,10 +1,13 @@
 const chatBox=document.querySelector(".chat-box");
 const messageInput=document.querySelector("#chat");
 const send=document.querySelector(".chat-send");
+const onlineBox=document.querySelector(".online");
 
 const Name = prompt("Enter Your Name");
 
 socket.emit("new-user-connected",Name);
+socket.emit("online-user",Name);
+
 
 
 //sender
